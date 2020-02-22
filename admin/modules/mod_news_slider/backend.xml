@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>
+    <module>
+        <id>mod_news_slider</id>
+        <title>Слайдер новостей</title>
+    </module>
+    <params>
+        <param type="number" name="newscount" title="Количество материалов" units="шт." hint="Количество материалов в слайдере (без учета фиксированной новости)" default="5" />
+        <param type="flag" name="showlastnews" title="Показывать последнюю новость" hint="Фиксированная новость, будет постоянно показываться" default="on" />
+        <param type="flag" name="showimage" title="Показывать фото статьи" default="off" />
+        <param type="flag" name="showdate" title="Показывать даты материалов" default="on" />
+        <param type="number" name="maxlen" title="Обрезать описания материалов длиннее" hint="Если 0 - будет показан вся новость" units="символов" default="150" />
+        <param type="list_db" name="cat_id" title="Статьи из раздела" src="cms_category" src_title="title" src_value="id" src_where="published='1' AND NSLevel>0" tree="1" >
+            <option title="Все разделы" value="0" />
+        </param>
+        <param type="flag" name="subs" title="Вместе с подразделами" default="on" />
+        <param type="flag" name="autoSlide" title="Автосмена слайдов" hint="Настройка слайдера" default="on" />
+        <param type="number" name="SlideInterval" title="Интервал смены слайдов" hint="В миллисекундах. 1 сек = 1000 мс. Настройка слайдера" units="мс" default="5000" />
+        <param type="list" name="nav" title="Навигация слайдера" hint="Настройка слайдера">
+            <option title="Скрыть" value="hide" />
+            <option title="Сверху" value="top" />
+            <option title="Снизу" value="bottom" />
+        </param>
+        <param type="flag" name="autoHeight" title="Автоподбор высоты" hint="Настройка слайдера" default="on" />
+        <param type="list" name="effect" title="Эффект смены слайдера" hint="Настройка слайдера">
+            <option title="По умолчанию" value="default" />
+            <option title="easeInSine" value="easeInSine" />
+            <option title="easeOutSine" value="easeOutSine" />
+            <option title="easeInOutSine" value="easeInOutSine" />
+            <option title="easeInQuad" value="easeInQuad" />
+            <option title="easeOutQuad" value="easeOutQuad" />
+            <option title="easeInOutQuad" value="easeInOutQuad" />
+            <option title="easeInCubic" value="easeInCubic" />
+            <option title="easeOutCubic" value="easeOutCubic" />
+            <option title="easeInOutCubic" value="easeInOutCubic" />
+            <option title="easeInQuart" value="easeInQuart" />
+            <option title="easeOutQuart" value="easeOutQuart" />
+            <option title="easeInOutQuart" value="easeInOutQuart" />
+            <option title="easeInQuint" value="easeInQuint" />
+            <option title="easeOutQuint" value="easeOutQuint" />
+            <option title="easeInOutQuint" value="easeInOutQuint" />
+            <option title="easeInExpo" value="easeInExpo" />
+            <option title="easeOutExpo" value="easeOutExpo" />
+            <option title="easeInOutExpo" value="easeInOutExpo" />
+            <option title="easeInCirc" value="easeInCirc" />
+            <option title="easeOutCirc" value="easeOutCirc" />
+            <option title="easeInOutCirc" value="easeInOutCirc" />
+            <option title="easeInBack" value="easeInBack" />
+            <option title="easeOutBack" value="easeOutBack" />
+            <option title="easeInOutBack" value="easeInOutBack" />
+            <option title="easeInElastic" value="easeInElastic" />
+            <option title="easeOutElastic" value="easeOutElastic" />
+            <option title="easeInOutElastic" value="easeInOutElastic" />
+            <option title="easeInBounce" value="easeInBounce" />
+            <option title="easeOutBounce" value="easeOutBounce" />
+            <option title="easeInOutBounce" value="easeInOutBounce" />
+        </param>
+        <param type="flag" name="arrow" title="Стрелки в слайдере" hint="Настройка слайдера" default="off" />
+    </params>
+</backend>
